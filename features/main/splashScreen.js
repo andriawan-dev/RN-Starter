@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { View,Text, StyleSheet,Image,ActivityIndicator,SafeAreaView } from "react-native";
 import codePush from "react-native-code-push";
+import * as Progress from 'react-native-progress';
+import { primaryColor } from "../../utils/values/colors";
+import { mainRoute } from "../../utils/values/routes";
 
-const SplashScreen = ({navigate}) => {
+const SplashScreen = ({navigation}) => {
+  
   const [isUpdateCodePush,setUpdateCodePush] = useState(false);
   const [progressUpdate,setProgressUpdate] = useState(0);
   useEffect(() => {
@@ -36,25 +40,38 @@ const codePushDownloadDidProgress = (progress) => {
 
 
   const initCodePush = async () => {
-    const update = await codePush.checkForUpdate();
-    console.log('[SplashScreen.js] isUpdate',update);
-    if(update){
-      setUpdateCodePush(true);
-        if(update.isMandatory){
-          codePush.sync({
-            installMode: codePush.InstallMode.IMMEDIATE
-          },codePushStatusDidChange,codePushDownloadDidProgress,);
-        }
+    try{
+      const update = await codePush.checkForUpdate();
+      console.log('[SplashScreen.js] isUpdate',update);
+      if(update){
+        setUpdateCodePush(true);
+          if(update.isMandatory){
+            codePush.sync({
+              installMode: codePush.InstallMode.IMMEDIATE
+            },codePushStatusDidChange,codePushDownloadDidProgress,);
+          }else{
+            navigation.replace(mainRoute); 
+          }
+      }else{
+        navigation.replace(mainRoute);
+      }
+    }catch(error){
+
     }
   }
 
   return (
     <SafeAreaView style={styles.container}>
-       <Image source={require('../../assets/images/LOGO.png')} style={styles.image} />
+      <Image source={require('../../assets/images/LOGO.png')} style={styles.image} />
       <Text >Page content</Text>
-          <View style={styles.bottomLayout}>
-     <ActivityIndicator size="large" color="#0000ff" />
-     </View>
+      <View style={styles.bottomLayout}>
+        {isUpdateCodePush && <Progress.Bar 
+          progress={progressUpdate} 
+          width={200} style={styles.progress} 
+          color={primaryColor}/>}
+        
+        {/* <ActivityIndicator size="large" color={primaryColor} /> */}
+      </View>
     </SafeAreaView>
   )
 }
@@ -69,11 +86,10 @@ const styles = StyleSheet.create({
     width: '70%',
     resizeMode: 'contain',
   },
-
   bottomLayout:{
+    alignItems: 'center',
+    width: '100%',
     position: 'absolute',
-    left:0,
-    right:0,
     bottom: '5%',
   }
 });
