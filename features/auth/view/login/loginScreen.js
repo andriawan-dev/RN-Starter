@@ -10,6 +10,9 @@ const LoginScreen = () => {
           style={styles.bgImage}
           resizeMode={"cover"}
           source={require('../../../../assets/images/auth/authBackground.png')} />
+        {/* <Text>
+          Aku mencari cinta sejati gg gaming sdlfjsdlkfj
+        </Text> */}
         <View style={styles.cardForm}>
           <Text 
             style={{
