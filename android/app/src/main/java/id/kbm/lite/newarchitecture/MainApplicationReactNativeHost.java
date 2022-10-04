@@ -1,4 +1,4 @@
-package com.rncanggih.newarchitecture;
+package id.kbm.lite.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.rncanggih.BuildConfig;
-import com.rncanggih.newarchitecture.components.MainComponentsRegistry;
-import com.rncanggih.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import id.kbm.lite.BuildConfig;
+import id.kbm.lite.newarchitecture.components.MainComponentsRegistry;
+import id.kbm.lite.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

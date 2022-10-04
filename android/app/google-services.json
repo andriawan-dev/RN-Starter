@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "618433091190",
+    "project_id": "kbm-lite",
+    "storage_bucket": "kbm-lite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618433091190:android:d8fba26b13103bf5c8b157",
+        "android_client_info": {
+          "package_name": "id.kbm.lite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618433091190-36l77cpprlnhq8lkqe1iosib07hvhuna.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kbm.lite",
+            "certificate_hash": "9cd9c0d21e81897f510615c8533986113dea9072"
+          }
+        },
+        {
+          "client_id": "618433091190-vribkmrpujl1oidv75r8tl3tmcpf570q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh3nQRTOL8c8Igas9RiPMW-8MhaHsRAgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618433091190-vribkmrpujl1oidv75r8tl3tmcpf570q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "618433091190-umme8m4uq4gakfim903720oeqv175mkv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.kbm.lite"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

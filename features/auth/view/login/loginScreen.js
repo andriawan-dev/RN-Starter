@@ -1,9 +1,14 @@
-import { View,Text, StyleSheet, TextInput, SafeAreaView, Image } from "react-native";
+import { useEffect } from "react";
+import { View,Text, StyleSheet, TextInput, SafeAreaView, Image, Button } from "react-native";
+import { initGoogleSignin, onGoogleButtonPress } from "../../../../utils/helpers/googleLoginHelper";
 import textStyles from "../../../../utils/styles/testStyles";
 import CustomTextInput from "../../../../utils/widgets/customTextInput";
 
 
 const LoginScreen = () => {
+  useEffect(() => {
+    initGoogleSignin();
+  },[]);
   return (
     <SafeAreaView style={styles.container}>
         <Image 
@@ -27,6 +32,11 @@ const LoginScreen = () => {
           <CustomTextInput 
             label={'Password'}
             placeholder={'Password'} />
+          <Button 
+            onPress={async () => {
+              onGoogleButtonPress().then((auth) => console.log(`Signed in with Google! info: ${auth}`))
+            }} 
+            title={'Google'}/>
         </View>
     </SafeAreaView>
   )

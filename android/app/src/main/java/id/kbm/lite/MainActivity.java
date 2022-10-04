@@ -1,4 +1,4 @@
-package com.rncanggih;
+package id.kbm.lite;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RNCanggih";
+    return "KBMLite";
   }
 
   /**
